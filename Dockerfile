@@ -1,12 +1,6 @@
-#
-# Super simple example of a Dockerfile
-#
-FROM ubuntu:latest
-MAINTAINER Andrew Odewahn "odewahn@oreilly.com"
-
+FROM ubuntu:14.04
+MAINTAINER abc "abc@abc.com"
 RUN apt-get update
-RUN apt-get install -y python python-pip wget
-RUN pip install Flask
-
-ADD hello.py /home/hello.py
-WORKDIR /
+RUN apt-get install -y nginx
+RUN echo 'Our first Docker image for Nginx' > /usr/share/nginx/html/index.html
+EXPOSE 6777
